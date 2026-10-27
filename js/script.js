@@ -1,18 +1,17 @@
-const loginForm = document.getElementById("loginForm");
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('register');
+const loginBtn = document.getElementById('login');
 
-loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+document.getElementById("signInForm").addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;                                    
+    const user = document.getElementById("username").value.trim();
+    const pass = document.getElementById("password").value;
 
-    if (username === "karltzy" && password === "karltzy123") {
-
-        alert("Login successful!");
-
-        window.location.href = "/pages/home/index.html";
-
+    if (user === "karltzy" && pass === "1234") {
+        sessionStorage.setItem("loggedIn", "true");
+        window.location.href = "pages/home/index.html";
     } else {
-        alert("Incorrect username or password!");
+        alert("Invalid login");
     }
 });
